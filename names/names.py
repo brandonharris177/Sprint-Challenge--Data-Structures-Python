@@ -18,32 +18,32 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         self.left = None
 #         self.right = None
 
-#     # Insert the given value into the tree
-#     def insert(self, value):
-#         self_value_len = len(self.value)
-#         valuelen = len(value)
-#         if valuelen < self_value_len:
-#             if self.left is None:
-#                 self.left = BSTNode(value)
-#             else:
-#                 self.left.insert(value)
-#         elif valuelen >= self_value_len:
-#             if self.right is None:
-#                 self.right = BSTNode(value)
-#             else:
-#                 self.right.insert(value)
+    # Insert the given value into the tree
+    # def insert(self, value):
+    #     self_value_len = len(self.value)
+    #     valuelen = len(value)
+    #     if valuelen < self_value_len:
+    #         if self.left is None:
+    #             self.left = BSTNode(value)
+    #         else:
+    #             self.left.insert(value)
+    #     elif valuelen >= self_value_len:
+    #         if self.right is None:
+    #             self.right = BSTNode(value)
+    #         else:
+    #             self.right.insert(value)
 
-#     def contains(self, target):
-#         self_value_len = len(self.value)
-#         targetlen = len(target)
-#         if self.value == target:
-#             duplicates.append(self.value)
-#         elif self.right != None and targetlen > self_value_len:
-#             return self.right.contains(targetlen)
-#         elif self.left != None and targetlen < self_value_len:
-#             return self.left.contains(targetlen)
-#         else:
-#             pass
+    # def contains(self, target):
+    #     self_value_len = len(self.value)
+    #     targetlen = len(target)
+    #     if self.value == target:
+    #         duplicates.append(self.value)
+    #     elif self.right != None and targetlen > self_value_len:
+    #         return self.right.contains(targetlen)
+    #     elif self.left != None and targetlen < self_value_len:
+    #         return self.left.contains(targetlen)
+    #     else:
+    #         pass
 
 class BSTNode:
     def __init__(self, value):
@@ -86,7 +86,9 @@ for name1 in names_1:
     tree.insert(name1)
 
 for name2 in names_2:
-    tree.contains(name2)
+    if tree.contains(name2): 
+        duplicates.append(name2)
+        
 
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
